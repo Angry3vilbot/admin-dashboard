@@ -1,5 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
 *{
     margin: 0;
     padding: 0;
-    background-color: red;
+    font-family: roboto, sans-serif;
+}
+*:focus{
+   outline: none; 
+}
+header{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-rows: 1fr;
+    margin-top: 20px;
+}
+header h4{
+    
+}
+header button{
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: transparent;
+}
+header button:active{
+    background: rgba(0, 0, 0, 0.1);
+}
+header button img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+    height: 20px;
+}
+#search input{
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    height: 25px;
+    width: 500px;
+    border: none;
+    background-color:rgb(230, 230, 230)
+}
+#search input:focus{
+    outline: solid 2px blue;
+    border: none;
+}
+#profile{
+    display: grid;
+    width: 250px;
+    grid-template-columns: repeat(2, minmax(20px, 50px)) 150px;
+    justify-self: end;
+}
+#profile #avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 360px;
+}
+#sidebar{
+    background-color: #16a34a;
+    width: 200px;
+    height: 90vh;
 }
