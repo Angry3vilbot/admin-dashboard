@@ -7,11 +7,24 @@
 *:focus{
    outline: none; 
 }
+body{
+    display: grid;
+    grid-template-areas: 
+                "side nav nav nav"
+                "side main main main"
+                "side main main main"
+                "side main main main";
+    grid-template-columns: 250px auto auto;
+    grid-template-rows: 75px;
+}
 header{
+    grid-area: nav;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     grid-template-rows: 1fr;
     margin-top: 20px;
+    justify-content: center;
+    height: 25px;
 }
 header h4{
     
@@ -30,6 +43,11 @@ header button img{
     margin-right: auto;
     width: 20px;
     height: 20px;
+}
+#search{
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    padding-left: 40px;
 }
 #search input{
     border-radius: 20px;
@@ -57,12 +75,14 @@ header button img{
     border-radius: 360px;
 }
 #sidebar{
+    grid-area: side;
     background-color: #16a34a;
-    width: 200px;
-    height: 90vh;
+    width: 250px;
+    height: 100vh;
     display: grid;
-    grid-template-rows: 100px repeat(5, 25px) 75px repeat(3, 25px);
+    grid-template-rows: 100px repeat(5, 30px) 75px repeat(3, 30px);
     color: white;
+    padding-top: 15px;
 }
 #sidebar div:first-child img{
     width: 50px;
@@ -73,14 +93,23 @@ header button img{
     height: 18px;
 }
 #sidebar div{
-    width: 200px;
+    width: 250px;
+    padding-left: 15px;
 }
 #sidebar div > *{
     display: inline;
 }
 #sidebar h1{
     font-size: 24px;
+    padding-left: 15px;
+    padding-bottom: 10px;
 }
 #sidebar h2{
     font-size: 18px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+#main-content{
+    grid-area: main;
+    background-color: rgb(226, 232, 240);
 }
