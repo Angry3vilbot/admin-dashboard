@@ -60,4 +60,27 @@ header button img{
     background-color: #16a34a;
     width: 200px;
     height: 90vh;
+    display: grid;
+    grid-template-rows: 100px repeat(5, 25px) 75px repeat(3, 25px);
+    color: white;
+}
+#sidebar div:first-child img{
+    width: 50px;
+    height: 50px;
+}
+#sidebar div img{
+    width: 18px;
+    height: 18px;
+}
+#sidebar div{
+    width: 200px;
+}
+#sidebar div > *{
+    display: inline;
+}
+#sidebar h1{
+    font-size: 24px;
+}
+#sidebar h2{
+    font-size: 18px;
 }
