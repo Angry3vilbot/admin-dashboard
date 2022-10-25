@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700&display=swap');
+/* No responsiveness due to lack of the ability to use Flexbox (the task states to use only Grid)
+ and me technically not knowing media queries (even though I know them) */
 *{
     margin: 0;
     padding: 0;
@@ -80,7 +82,7 @@ header button img{
     grid-area: side;
     background-color: #16a34a;
     width: 250px;
-    height: 100vh;
+    height: 175vh;
     display: grid;
     grid-template-rows: 100px repeat(5, 30px) 75px repeat(3, 30px);
     color: white;
@@ -114,28 +116,50 @@ header button img{
 #main-content{
     grid-area: main;
     background-color: rgb(226, 232, 240);
+    display: grid;
+    grid-template-areas: 
+                "action action action"
+                "projects projects announcements"
+                "projects projects announcements"
+                "projects projects trending"
+                "projects projects trending"
+}
+#main-content h4, h3{
+    font-weight: 500;
 }
 #action-bar{
     background-color: white;
     display: grid;
+    grid-area: action;
     grid-template-columns: 80px 500px 1fr;
+    height: 100px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 #action-bar img{
     width: 80px;
     height: 80px;
     border-radius: 360px;
+    margin-left: 50px;
 }
 #action-bar p{
     font-weight: 700;
-    
+    margin-bottom: 5px;
 }
 #action-bar h1{
     font-size: 24px;
+}
+#greet{
+    margin-left: 75px;
+    margin-top: 20px;
 }
 #action-menu{
     justify-self: end;
     padding-right: 75px;
     padding-top: 17px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    grid-auto-rows: 1fr;
 }
 #action-menu button{
     background-color: #15803d;
@@ -146,4 +170,109 @@ header button img{
     color: white;
     font-weight: 600;
     font-size: 18px;
+}
+#projects{
+    grid-area: projects;
+    margin-left: 25px;
+}
+#projects h3{
+    padding-bottom: 15px;
+}
+#projects-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.project-card{
+    background-color: white;
+    border-left: solid 10px #f97316;
+    border-radius: 10px;
+    width: 350px;
+    height: 200px;
+    position: relative;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.project-card h4, .project-card p{
+    padding-left: 25px;
+}
+.project-card h4{
+    padding-top: 25px;
+    padding-bottom: 5px;
+}
+.project-card p{
+    color: grey;
+}
+.project-actions{
+    position: absolute;
+    display: grid;
+    width: 150px;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    bottom: 20px;
+    right: 20px;
+}
+.project-actions img{
+    width: 27px;
+    height: 27px;
+}
+#announcements{
+    grid-area: announcements;
+    margin-left: 25px;
+}
+#announcements h3{
+    padding-bottom: 15px;
+}
+#announcements h4{
+    font-size: 16px;
+}
+#announcements p{
+    font-size: 14px;
+    color: gray;
+}
+#announcement-card-container{
+    background-color: white;
+    border-radius: 10px;
+    display: grid;
+    width: 290px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    grid-template-columns: 1fr;
+}
+.announcement-card{
+    border-bottom: 1px grey solid;
+    width: 200px;
+    padding: 10px 10px;
+    justify-self: center;
+}
+#trending{
+    grid-area: trending;
+    margin-left: 25px;
+    width: 290px;
+}
+#trending h3{
+    padding-bottom: 15px;
+}
+#trending img{
+    width: 50px;
+    height: 50px;
+    border-radius: 360px;
+    margin-left: 20px;
+}
+#trending-card-container{
+    background-color: white;
+    height: 350px;
+    border-radius: 10px;
+    display: grid;
+    align-content:space-around;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.trending-card{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+.trending-text{
+    margin-left: 50px;
+}
+.trending-text p:last-child{
+    color: grey;
+    font-size: 16px;
 }
